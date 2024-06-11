@@ -16,6 +16,7 @@ func _on_new_game():
 func _on_new_game_playout_finished():
 	print("_on_new_game_playout_finished")
 	var game_screen: GameScreen = game_screen_preload.instantiate() as GameScreen
+	game_screen.reset([7, 6, 5, 4, 3, 2, 1, 0])
 	if game_screen:
 		get_parent().add_child(game_screen) # TODO: figure out why get_parent is needed
 		
