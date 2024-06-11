@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxouun4umhulk"]
+
+[ext_resource type="Script" path="res://game_screen.gd" id="1_ho2m3"]
+[ext_resource type="PackedScene" uid="uid://b44yb5iniwsrf" path="res://scenes/card.tscn" id="1_sq4u6"]
+
+[node name="GameScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ho2m3")
+
+[node name="Card0" parent="." instance=ExtResource("1_sq4u6")]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 168.0
+offset_right = -332.0
+offset_bottom = -640.0
+
+[node name="Card1" parent="." instance=ExtResource("1_sq4u6")]
+layout_mode = 1
+offset_left = 112.0
+offset_top = 168.0
+offset_right = -236.0
+offset_bottom = -640.0
+
+[node name="Card2" parent="." instance=ExtResource("1_sq4u6")]
+layout_mode = 1
+offset_left = 216.0
+offset_top = 168.0
+offset_right = -132.0
+offset_bottom = -640.0
+
+[node name="Card3" parent="." instance=ExtResource("1_sq4u6")]
+layout_mode = 1
+offset_left = 321.0
+offset_top = 168.0
+offset_right = -27.0
+offset_bottom = -640.0
+
+[node name="Card4" parent="." instance=ExtResource("1_sq4u6")]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 296.0
+offset_right = -332.0
+offset_bottom = -512.0
+
+[node name="Card5" parent="." instance=ExtResource("1_sq4u6")]
+layout_mode = 1
+offset_left = 112.0
+offset_top = 296.0
+offset_right = -236.0
+offset_bottom = -512.0
+
+[node name="Card6" parent="." instance=ExtResource("1_sq4u6")]
+layout_mode = 1
+offset_left = 216.0
+offset_top = 296.0
+offset_right = -132.0
+offset_bottom = -512.0
+
+[node name="Card7" parent="." instance=ExtResource("1_sq4u6")]
+layout_mode = 1
+offset_left = 320.0
+offset_top = 296.0
+offset_right = -28.0
+offset_bottom = -512.0
