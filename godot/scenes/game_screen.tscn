@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxouun4umhulk"]
+[gd_scene load_steps=5 format=3 uid="uid://dxouun4umhulk"]
 
 [ext_resource type="Script" path="res://scenes/game_screen.gd" id="1_cgyfl"]
 [ext_resource type="PackedScene" uid="uid://b44yb5iniwsrf" path="res://scenes/card.tscn" id="2_abjdx"]
@@ -6,6 +6,9 @@
 [sub_resource type="LabelSettings" id="LabelSettings_pyxtd"]
 font_size = 80
 font_color = Color(0.501961, 0.992157, 0.341176, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dicam"]
+font_size = 33
 
 [node name="GameScreen" type="Control"]
 layout_mode = 3
@@ -82,5 +85,15 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_pyxtd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SwapsCountLabel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 472.0
+offset_right = 428.0
+offset_bottom = 584.0
+text = "Swaps: 0"
+label_settings = SubResource("LabelSettings_dicam")
 horizontal_alignment = 1
 vertical_alignment = 1

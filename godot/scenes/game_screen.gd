@@ -4,6 +4,7 @@ const default_display_array: Array = [0, 1, 2, 3, 4, 5, 6, 7]
 var _display_array: Array = default_display_array.duplicate(true)
 var _hidden_array: Array
 var _selected_card_index: int = -1
+var _swaps_count: int = 0
 
 signal card_selected(index: int)
 signal card_locked(index: int)
@@ -32,6 +33,7 @@ func _on_card_clicked(index: int) -> void:
 		if card1 and card2:
 			self._swap_cards(index, self._selected_card_index)
 			$CenterContainer/MatchCountLabel.text = str(_count_matches())
+			self._set_swaps_count(self._swaps_count + 1)
 			self._selected_card_index = -1
 
 func _on_card_double_clicked(index: int) -> void:
@@ -67,6 +69,13 @@ func _count_matches() -> int:
 		if self._hidden_array[i] == self._display_array[i]:
 			matches_count = matches_count + 1
 	return matches_count
+	
+func _set_swaps_count(swaps_count: int):
+	self._swaps_count = swaps_count
+	$SwapsCountLabel.text = "Swaps: %d" % self._swaps_count
+	
+func get_swaps_count() -> int:
+	return self._swaps_count
 
 func reset(hidden_array: Array):
 	if hidden_array.size() != default_display_array.size():
@@ -74,6 +83,7 @@ func reset(hidden_array: Array):
 	self._display_array = self.default_display_array.duplicate(true)
 	self._hidden_array = hidden_array
 	self._selected_card_index = -1
+	self._set_swaps_count(0)
 	$CenterContainer/MatchCountLabel.text = str(_count_matches())
 	for index in range(0, 8):
 		var card: Card = _get_card(index)
