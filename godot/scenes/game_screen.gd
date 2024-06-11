@@ -33,7 +33,8 @@ func _on_card_clicked(index: int) -> void:
 		if card1 and card2:
 			self._swap_cards(index, self._selected_card_index)
 			$CenterContainer/MatchCountLabel.text = str(_count_matches())
-			self._set_swaps_count(self._swaps_count + 1)
+			if index != self._selected_card_index:
+				self._set_swaps_count(self._swaps_count + 1)
 			self._selected_card_index = -1
 
 func _on_card_double_clicked(index: int) -> void:
