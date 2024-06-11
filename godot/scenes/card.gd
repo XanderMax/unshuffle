@@ -24,7 +24,7 @@ func _gui_input(event):
 
 func _on_click() -> void:
 	print("_on_click")
-	_clickTimer.start(0.5)
+	_clickTimer.start(0.25)
 
 func _on_click_timer_timeout() -> void:
 	print("_on_click_timer_timeout")
