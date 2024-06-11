@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1dr6dtbbrlp3"]
+
+[ext_resource type="Script" path="res://scenes/all_time_score.gd" id="1_2wj2q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mlplr"]
+font_size = 38
+
+[sub_resource type="LabelSettings" id="LabelSettings_lt7ru"]
+font_size = 50
+
+[node name="AllTimeScore" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2wj2q")
+
+[node name="TitleLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "TITLE"
+label_settings = SubResource("LabelSettings_mlplr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="ScoreLable" type="Label" parent="CenterContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_lt7ru")
+horizontal_alignment = 1
+vertical_alignment = 1
