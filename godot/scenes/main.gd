@@ -8,6 +8,8 @@ func _ready():
 	$MainMenu.newGame.connect(_on_new_game)
 	
 func _on_new_game():
+	if $MainMenu.playout_finished.is_connected(_on_new_game_playout_finished):
+		return
 	$MainMenu.playOutUi()
 	$MainMenu.playout_finished.connect(_on_new_game_playout_finished)
 

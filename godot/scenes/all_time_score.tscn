@@ -4,6 +4,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_mlplr"]
 font_size = 24
+shadow_color = Color(0.501961, 0, 0, 0.509804)
 
 [sub_resource type="LabelSettings" id="LabelSettings_lt7ru"]
 font_size = 25
