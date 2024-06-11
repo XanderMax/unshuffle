@@ -30,11 +30,8 @@ func _on_card_clicked(index: int) -> void:
 		var card1 = _get_card(index)
 		var card2 = _get_card(self._selected_card_index)
 		if card1 and card2:
-			var tmp = self._display_array[index]
-			self._display_array[index] = self._display_array[self._selected_card_index]
-			self._display_array[self._selected_card_index] = tmp
-			card1.setLabel(self._display_array[index])
-			card2.setLabel(self._display_array[self._selected_card_index])
+			self._swap_cards(index, self._selected_card_index)
+			$CenterContainer/MatchCountLabel.text = str(_count_matches())
 			self._selected_card_index = -1
 
 func _on_card_double_clicked(index: int) -> void:
@@ -47,13 +44,37 @@ func _on_card_double_clicked(index: int) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
-	
+
+func _swap_cards(index0: int, index1: int):
+	assert(index0 >= 0 and index0 < self._display_array.size())
+	assert(index1 >= 0 and index1 < self._display_array.size())
+	if index0 == index1:
+		return
+	var val0 = self._display_array[index0]
+	var val1 = self._display_array[index1]
+	var card0 = _get_card(index0)
+	var card1 = _get_card(index1)
+	assert(card0 and card1)
+	self._display_array[index0] = val1
+	self._display_array[index1] = val0
+	card0.setLabel(val1 + 1)
+	card1.setLabel(val0 + 1)
+
+func _count_matches() -> int:
+	assert(self._hidden_array.size() == self._display_array.size())
+	var matches_count = 0
+	for i in range(self._hidden_array.size()):
+		if self._hidden_array[i] == self._display_array[i]:
+			matches_count = matches_count + 1
+	return matches_count
+
 func reset(hidden_array: Array):
 	if hidden_array.size() != default_display_array.size():
 		return
 	self._display_array = self.default_display_array.duplicate(true)
 	self._hidden_array = hidden_array
 	self._selected_card_index = -1
+	$CenterContainer/MatchCountLabel.text = str(_count_matches())
 	for index in range(0, 8):
 		var card: Card = _get_card(index)
-		card.setLabel(self._display_array[index])
+		card.setLabel(self._display_array[index] + 1)
