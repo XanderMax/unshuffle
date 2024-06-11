@@ -1,4 +1,4 @@
-extends Control
+class_name GameScreen extends Control
 
 signal card_selected(index: int)
 signal card_locked(index: int)

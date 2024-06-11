@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://scenes/all_time_score.gd" id="1_2wj2q"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mlplr"]
-font_size = 38
+font_size = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_lt7ru"]
-font_size = 50
+font_size = 25
 
 [node name="AllTimeScore" type="VBoxContainer"]
 anchors_preset = 15
@@ -25,11 +25,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-custom_minimum_size = Vector2(0, 200)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="ScoreLable" type="Label" parent="CenterContainer"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_lt7ru")
