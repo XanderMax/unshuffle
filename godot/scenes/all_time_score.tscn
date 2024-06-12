@@ -16,11 +16,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2wj2q")
+Title = "Title"
 
 [node name="TitleLabel" type="Label" parent="."]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-text = "TITLE"
+text = "Title"
 label_settings = SubResource("LabelSettings_mlplr")
 horizontal_alignment = 1
 vertical_alignment = 1
