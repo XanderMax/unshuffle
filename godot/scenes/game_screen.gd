@@ -32,9 +32,7 @@ func _on_card_clicked(index: int) -> void:
 		var card2 = _get_card(self._selected_card_index)
 		if card1 and card2:
 			self._swap_cards(index, self._selected_card_index)
-			$CenterContainer/MatchCountLabel.text = str(_count_matches())
-			if index != self._selected_card_index:
-				self._set_swaps_count(self._swaps_count + 1)
+			self._update_match_count()
 			self._selected_card_index = -1
 
 func _on_card_double_clicked(index: int) -> void:
@@ -62,6 +60,7 @@ func _swap_cards(index0: int, index1: int):
 	self._display_array[index1] = val0
 	card0.setLabel(val1 + 1)
 	card1.setLabel(val0 + 1)
+	self._set_swaps_count(self._swaps_count + 1)
 
 func _count_matches() -> int:
 	assert(self._hidden_array.size() == self._display_array.size())
@@ -75,6 +74,9 @@ func _set_swaps_count(swaps_count: int):
 	self._swaps_count = swaps_count
 	$SwapsCountLabel.text = "Swaps: %d" % self._swaps_count
 	
+func _update_match_count():
+	$CenterContainer/MatchCountLabel.text = str(_count_matches())
+
 func get_swaps_count() -> int:
 	return self._swaps_count
 
@@ -85,7 +87,7 @@ func reset(hidden_array: Array):
 	self._hidden_array = hidden_array
 	self._selected_card_index = -1
 	self._set_swaps_count(0)
-	$CenterContainer/MatchCountLabel.text = str(_count_matches())
+	self._update_match_count()
 	for index in range(0, 8):
 		var card: Card = _get_card(index)
 		card.setLabel(self._display_array[index] + 1)
