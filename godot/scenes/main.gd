@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 const game_screen_preload: Resource = preload("res://scenes/game_screen.tscn")
 var _derangements_8: Array

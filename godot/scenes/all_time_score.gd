@@ -9,7 +9,7 @@ extends VBoxContainer
 		return $TitleLabel.text
 # Called when the node enters the scene tree for the first time.
 func setScore(score:int):
-	$CenterContainer/ScoreLable.text = str(score)
+	$ScoreLable.text = str(score)
 	
 func _ready():
 	$TitleLabel.text = self.Title
