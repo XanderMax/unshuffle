@@ -18,12 +18,15 @@ func _read_derangments():
 	assert(parse_result.size() > 0)
 	self._derangements_8 = parse_result
 	
-func _get_random_derangement() -> Array:
+func _get_random_derangement() -> Array[int]:
 	assert(self._derangements_8.size() > 0)
 	var random_index = randi() % self._derangements_8.size()
 	var random_array: Array = self._derangements_8[random_index]
 	assert(random_array.size() == 8)
-	return random_array
+	var random_array_int: Array[int]
+	for value in random_array:
+		random_array_int.push_back(int(value))
+	return random_array_int
 
 func _on_new_game():
 	if $MainMenu.playout_finished.is_connected(_on_new_game_playout_finished):
@@ -34,9 +37,10 @@ func _on_new_game():
 func _on_new_game_playout_finished():
 	print("_on_new_game_playout_finished")
 	var game_screen: GameScreen = game_screen_preload.instantiate() as GameScreen
-	game_screen.reset(self._get_random_derangement())
+	game_screen.set_secret_sequence(self._get_random_derangement())
 	if game_screen:
 		get_parent().add_child(game_screen) # TODO: figure out why get_parent is needed
+		game_screen.play_in()
 		
 	$MainMenu.playout_finished.disconnect(_on_new_game_playout_finished)
 

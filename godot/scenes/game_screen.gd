@@ -1,4 +1,4 @@
-extends Control
+class_name GameScreen extends Control
 
 var _secret_sequence: Array[int] = [7, 6, 5, 4, 3, 2, 1, 0]
 var _visible_sequence: Array[int] = [0, 1, 2, 3, 4, 5, 6, 7]
@@ -8,7 +8,6 @@ signal game_won()
 
 func _ready():
 	$Board.swapped.connect(_on_swapped)
-	$Board.play_in()
 
 
 func _on_swapped(index0: int, index1: int):
@@ -53,7 +52,7 @@ func _count_matches() -> int:
 
 
 func set_secret_sequence(sequence: Array[int]):
-	assert(self.sequence.size() == self._visible_sequence.size())
+	assert(sequence.size() == self._visible_sequence.size())
 	self._secret_sequence = sequence
 	_update_matches()
 
