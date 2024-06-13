@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw7m4iw4dulx6"]
+
+[ext_resource type="PackedScene" uid="uid://dhlq5vq34rl7g" path="res://scenes/card2.tscn" id="1_a5573"]
+[ext_resource type="Script" path="res://scenes/board.gd" id="1_d4p25"]
+
+[node name="Board" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d4p25")
+metadata/_edit_horizontal_guides_ = [128.0]
+
+[node name="Line0" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.138
+offset_bottom = 0.21199
+
+[node name="Card0" parent="Line0" instance=ExtResource("1_a5573")]
+layout_mode = 2
+
+[node name="Card1" parent="Line0" instance=ExtResource("1_a5573")]
+layout_mode = 2
+
+[node name="Card2" parent="Line0" instance=ExtResource("1_a5573")]
+layout_mode = 2
+
+[node name="Card3" parent="Line0" instance=ExtResource("1_a5573")]
+layout_mode = 2
+
+[node name="Line1" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.138
+anchor_right = 1.0
+anchor_bottom = 0.276
+offset_top = 0.21199
+offset_bottom = 0.423981
+
+[node name="Card4" parent="Line1" instance=ExtResource("1_a5573")]
+layout_mode = 2
+
+[node name="Card5" parent="Line1" instance=ExtResource("1_a5573")]
+layout_mode = 2
+
+[node name="Card6" parent="Line1" instance=ExtResource("1_a5573")]
+layout_mode = 2
+
+[node name="Card7" parent="Line1" instance=ExtResource("1_a5573")]
+layout_mode = 2

@@ -41,6 +41,7 @@ func _on_double_click():
 	print("card2::_on_double_click")
 	self._click_timer.stop()
 	self._toggle_locked()
+	self.double_clicked.emit()
 
 
 func _toggle_locked():
@@ -71,6 +72,9 @@ func is_selected() -> bool:
 	return self._selected
 
 
-func set_number_label(text: String):
+func set_text(text: String):
 	$NumberLabel.text = text
-	
+
+
+func get_text() -> String:
+	return $NumberLabel.text
