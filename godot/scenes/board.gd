@@ -40,9 +40,9 @@ func _on_card_clicked(index: int, card: Card2):
 
 
 func _swap(index0: int, index1: int):
+	print("board::_swap(", index0, ", ", index1, ")")
 	assert(index0 >= 0 && index0 < self._cards.size())
 	assert(index1 >= 0 && index1 < self._cards.size())
-	print("board::_swap(", index0, ", ", index1, ")")
 	if index1 == index0:
 		return
 	var tmp: String = self._cards[index0].get_text()
@@ -57,4 +57,12 @@ func _on_card_double_clicked():
 		self._cards[self._selected_card_index].set_selected(false)
 		self._selected_card_index = -1
 
-	
+
+func play_in():
+	if not $AnimationPlayer.is_playing():
+		$AnimationPlayer.play("play_in")
+
+
+func play_out():
+	if not $AnimationPlayer.is_playing():
+		$AnimationPlayer.play_backwards("play_in")
