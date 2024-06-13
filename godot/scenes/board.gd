@@ -59,10 +59,14 @@ func _on_card_double_clicked():
 
 
 func play_in():
-	if not $AnimationPlayer.is_playing():
+	if not self.is_playing():
 		$AnimationPlayer.play("play_in")
 
 
 func play_out():
-	if not $AnimationPlayer.is_playing():
+	if not self.is_playing():
 		$AnimationPlayer.play_backwards("play_in")
+
+
+func is_playing() -> bool:
+	return $AnimationPlayer.is_playing()

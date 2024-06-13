@@ -4,6 +4,8 @@ var _secret_sequence: Array[int] = [7, 6, 5, 4, 3, 2, 1, 0]
 var _visible_sequence: Array[int] = [0, 1, 2, 3, 4, 5, 6, 7]
 var _swaps_count: int = 0
 
+signal game_won()
+
 func _ready():
 	$Board.swapped.connect(_on_swapped)
 	$Board.play_in()
@@ -24,9 +26,9 @@ func _swap(index0: int, index1: int):
 	self._visible_sequence[index1] = self._visible_sequence[index0]
 	self._visible_sequence[index0] = tmp
 	print(_visible_sequence)
-	self._update_matches()
 	self._increment_swaps_count()
-
+	if self._update_matches() == self._secret_sequence.size():
+		self.game_won.emit()
 
 
 func _increment_swaps_count():
@@ -35,9 +37,19 @@ func _increment_swaps_count():
 	$SwapsCountLabel.text = "Swaps: %d" % self._swaps_count
 
 
-func _update_matches():
-	var matches: int = count_matches()
+func _update_matches() -> int:
+	var matches: int = _count_matches()
 	$CenterContainer/MatchCountLabel.text = str(matches)
+	return matches
+
+
+func _count_matches() -> int:
+	assert(self._secret_sequence.size() == self._visible_sequence.size())
+	var counter: int = 0
+	for i in range(self._secret_sequence.size()):
+		if self._secret_sequence[i] == self._visible_sequence[i]:
+			counter = counter + 1
+	return counter
 
 
 func set_secret_sequence(sequence: Array[int]):
@@ -50,12 +62,11 @@ func get_swaps_count() -> int:
 	return self._swaps_count
 
 
-func count_matches() -> int:
-	assert(self._secret_sequence.size() == self._visible_sequence.size())
-	var counter: int = 0
-	for i in range(self._secret_sequence.size()):
-		if self._secret_sequence[i] == self._visible_sequence[i]:
-			counter = counter + 1
-	return counter
+func play_in():
+	if not $Board.is_playing():
+		$Board.play_in()
 
 
+func play_out():
+	if not $Board.is_playing():
+		$Board.play_out()
