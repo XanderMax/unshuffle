@@ -35,7 +35,7 @@ func _on_card_clicked(index: int, card: Card2):
 	self._cards[self._selected_card_index].set_selected(false)
 	var tmp_index: int = self._selected_card_index
 	self._selected_card_index = -1
-	if self._selected_card_index != index:
+	if tmp_index != index:
 		self._swap(tmp_index, index)
 
 

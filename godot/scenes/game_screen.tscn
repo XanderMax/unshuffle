@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxouun4umhulk"]
 
 [ext_resource type="Script" path="res://scenes/game_screen.gd" id="1_cgyfl"]
-[ext_resource type="PackedScene" uid="uid://b44yb5iniwsrf" path="res://scenes/card.tscn" id="2_abjdx"]
+[ext_resource type="PackedScene" uid="uid://bw7m4iw4dulx6" path="res://scenes/board.tscn" id="2_2kk7c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pyxtd"]
 font_size = 80
@@ -18,62 +18,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cgyfl")
-
-[node name="Card0" parent="." instance=ExtResource("2_abjdx")]
-layout_mode = 1
-offset_left = 16.0
-offset_top = 168.0
-offset_right = -332.0
-offset_bottom = -640.0
-
-[node name="Card1" parent="." instance=ExtResource("2_abjdx")]
-layout_mode = 1
-offset_left = 112.0
-offset_top = 168.0
-offset_right = -236.0
-offset_bottom = -640.0
-
-[node name="Card2" parent="." instance=ExtResource("2_abjdx")]
-layout_mode = 1
-offset_left = 216.0
-offset_top = 168.0
-offset_right = -132.0
-offset_bottom = -640.0
-
-[node name="Card3" parent="." instance=ExtResource("2_abjdx")]
-layout_mode = 1
-offset_left = 321.0
-offset_top = 168.0
-offset_right = -27.0
-offset_bottom = -640.0
-
-[node name="Card4" parent="." instance=ExtResource("2_abjdx")]
-layout_mode = 1
-offset_left = 16.0
-offset_top = 296.0
-offset_right = -332.0
-offset_bottom = -512.0
-
-[node name="Card5" parent="." instance=ExtResource("2_abjdx")]
-layout_mode = 1
-offset_left = 112.0
-offset_top = 296.0
-offset_right = -236.0
-offset_bottom = -512.0
-
-[node name="Card6" parent="." instance=ExtResource("2_abjdx")]
-layout_mode = 1
-offset_left = 216.0
-offset_top = 296.0
-offset_right = -132.0
-offset_bottom = -512.0
-
-[node name="Card7" parent="." instance=ExtResource("2_abjdx")]
-layout_mode = 1
-offset_left = 320.0
-offset_top = 296.0
-offset_right = -28.0
-offset_bottom = -512.0
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 0
@@ -97,3 +41,10 @@ text = "Swaps: 0"
 label_settings = SubResource("LabelSettings_dicam")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Board" parent="." instance=ExtResource("2_2kk7c")]
+layout_mode = 1
+anchor_top = 0.199
+anchor_bottom = 0.449
+offset_top = -0.274017
+offset_bottom = 2.65198
