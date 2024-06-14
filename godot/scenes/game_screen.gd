@@ -6,6 +6,7 @@ var _swaps_count: int = 0
 
 signal game_won()
 
+
 func _ready():
 	$Board.swapped.connect(_on_swapped)
 
@@ -52,6 +53,7 @@ func _count_matches() -> int:
 
 
 func set_secret_sequence(sequence: Array[int]):
+	print("game_screen::set_secret_sequence(", sequence, ")")
 	assert(sequence.size() == self._visible_sequence.size())
 	self._secret_sequence = sequence
 	_update_matches()

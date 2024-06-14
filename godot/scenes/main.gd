@@ -35,9 +35,9 @@ func _on_new_game():
 	$MainMenu.playout_finished.connect(_on_new_game_playout_finished)
 
 func _on_new_game_playout_finished():
-	print("_on_new_game_playout_finished")
 	var game_screen: GameScreen = game_screen_preload.instantiate() as GameScreen
-	game_screen.set_secret_sequence(self._get_random_derangement())
+	var random_sequence: Array[int] = self._get_random_derangement()
+	game_screen.set_secret_sequence(random_sequence)
 	if game_screen:
 		get_parent().add_child(game_screen) # TODO: figure out why get_parent is needed
 		game_screen.play_in()
