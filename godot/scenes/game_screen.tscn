@@ -8,7 +8,7 @@ font_size = 80
 font_color = Color(0.501961, 0.992157, 0.341176, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_dicam"]
-font_size = 33
+font_size = 48
 
 [node name="GameScreen" type="Control"]
 layout_mode = 3
@@ -18,37 +18,48 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cgyfl")
+metadata/_edit_horizontal_guides_ = [296.0, 530.0]
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 0
-offset_right = 428.0
-offset_bottom = 152.0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.078
+anchor_right = 0.991
+anchor_bottom = 0.198
+offset_top = 0.771996
+offset_right = 3.85199
+offset_bottom = -0.348007
 
 [node name="MatchCountLabel" type="Label" parent="CenterContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-text = "0"
+text = "0/8"
 label_settings = SubResource("LabelSettings_pyxtd")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SwapsCountLabel" type="Label" parent="."]
-layout_mode = 0
-offset_top = 472.0
-offset_right = 428.0
-offset_bottom = 584.0
-text = "Swaps: 0"
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.207
+anchor_right = 1.0
+anchor_bottom = 0.28
+offset_left = -8.132
+offset_top = 0.317978
+offset_bottom = -0.279999
+text = "0"
 label_settings = SubResource("LabelSettings_dicam")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Board" parent="." instance=ExtResource("2_2kk7c")]
 layout_mode = 1
-anchor_left = 0.037
-anchor_top = 0.199
+anchor_left = 0.056
+anchor_top = 0.32
 anchor_right = 0.972
-anchor_bottom = 0.451
-offset_left = 0.164
-offset_top = -0.274017
+anchor_bottom = 0.572
+offset_left = -7.968
+offset_top = -0.320007
 offset_right = -0.0160217
-offset_bottom = 0.373962
+offset_bottom = 0.328003

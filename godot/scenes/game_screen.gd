@@ -34,7 +34,7 @@ func _swap(index0: int, index1: int):
 func _increment_swaps_count():
 	self._swaps_count = self._swaps_count + 1
 	print("game_screen::_increment_swaps_count(", self._swaps_count, ")")
-	$SwapsCountLabel.text = "Swaps: %d" % self._swaps_count
+	$SwapsCountLabel.text = str(self._swaps_count)
 
 
 func _update_matches() -> int:
