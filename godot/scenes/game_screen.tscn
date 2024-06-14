@@ -44,7 +44,11 @@ vertical_alignment = 1
 
 [node name="Board" parent="." instance=ExtResource("2_2kk7c")]
 layout_mode = 1
+anchor_left = 0.037
 anchor_top = 0.199
-anchor_bottom = 0.449
+anchor_right = 0.972
+anchor_bottom = 0.451
+offset_left = 0.164
 offset_top = -0.274017
-offset_bottom = 2.65198
+offset_right = -0.0160217
+offset_bottom = 0.373962
