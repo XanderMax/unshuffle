@@ -6,12 +6,12 @@ signal clicked()
 const _closed_padlock_texture: Resource = preload("res://imgs/01_padlock_icon_white_closed.svg")
 const _opened_padlock_texture: Resource = preload("res://imgs/02_padlock_icon_white_open.svg")
 
+
 var locked: bool = false:
 	set(val):
 		if val != locked:
 			locked = val
 			_update_icon()
-			self.clicked.emit()
 
 
 func _ready():
@@ -31,4 +31,4 @@ func _gui_input(event):
 	var mouseEvent:InputEventMouseButton = event as InputEventMouseButton
 	if event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
 		if not mouseEvent.double_click:
-			self.locked = not self.locked
+			self.clicked.emit()
