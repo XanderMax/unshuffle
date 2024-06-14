@@ -1,4 +1,4 @@
-class_name Card2 extends AspectRatioContainer
+class_name Card2 extends Control
 
 const _circle_unlocked_texture: Resource = preload("res://imgs/03_circle_white.png")
 const _circle_locked_texture: Resource = preload("res://imgs/04_circle_white_gray_bg.png")
@@ -46,7 +46,7 @@ func _on_double_click():
 
 func _toggle_locked():
 	self._locked = not self._locked
-	print("card2::_toggle_locked ", self._locked)
+	print("card2::_toggle_locked ", self._locked, self)
 	if self._locked:
 		$Circle.texture = self._circle_locked_texture
 	else:
