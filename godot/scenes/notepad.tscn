@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://brd6qlguf3i2q"]
+[gd_scene load_steps=5 format=3 uid="uid://brd6qlguf3i2q"]
 
+[ext_resource type="Script" path="res://scenes/notepad.gd" id="1_g31iu"]
 [ext_resource type="PackedScene" uid="uid://dhlq5vq34rl7g" path="res://scenes/card2.tscn" id="2_mwvha"]
 [ext_resource type="Texture2D" uid="uid://b1175yc15ijdt" path="res://imgs/02_padlock_icon_white_open.svg" id="3_r6x0g"]
+[ext_resource type="Script" path="res://scenes/padlock_icon.gd" id="3_ybpot"]
 
 [node name="Notepad" type="GridContainer"]
 anchors_preset = 15
@@ -12,33 +14,35 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 3
+script = ExtResource("1_g31iu")
+
+[node name="Card0" parent="." instance=ExtResource("2_mwvha")]
+layout_mode = 2
+
+[node name="Card1" parent="." instance=ExtResource("2_mwvha")]
+layout_mode = 2
 
 [node name="Card2" parent="." instance=ExtResource("2_mwvha")]
-layout_mode = 2
-
-[node name="Card3" parent="." instance=ExtResource("2_mwvha")]
-layout_mode = 2
-
-[node name="Card4" parent="." instance=ExtResource("2_mwvha")]
-layout_mode = 2
-
-[node name="Card5" parent="." instance=ExtResource("2_mwvha")]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 2
-texture = ExtResource("3_r6x0g")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Card6" parent="." instance=ExtResource("2_mwvha")]
 layout_mode = 2
 
 [node name="Card7" parent="." instance=ExtResource("2_mwvha")]
 layout_mode = 2
 
-[node name="Card8" parent="." instance=ExtResource("2_mwvha")]
+[node name="PadlockIcon" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("3_r6x0g")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("3_ybpot")
+
+[node name="Card3" parent="." instance=ExtResource("2_mwvha")]
 layout_mode = 2
 
-[node name="Card9" parent="." instance=ExtResource("2_mwvha")]
+[node name="Card6" parent="." instance=ExtResource("2_mwvha")]
+layout_mode = 2
+
+[node name="Card5" parent="." instance=ExtResource("2_mwvha")]
+layout_mode = 2
+
+[node name="Card4" parent="." instance=ExtResource("2_mwvha")]
 layout_mode = 2

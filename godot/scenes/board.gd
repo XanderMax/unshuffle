@@ -19,20 +19,19 @@ func _ready():
 	for i in range(self._cards.size()):
 		var card: Card2 = self._cards[i]
 		card.clicked.connect(func(): _on_card_clicked(i, card))
-		card.double_clicked.connect(func(): _on_card_double_clicked())
 		card.set_text(str(i + 1))
 
 
 func _on_card_clicked(index: int, card: Card2):
 	assert(index >= 0 && index < self._cards.size())
 	print("board::_on_card_clicked(", index, ", ", card, ")")
-	if card.is_locked():
+	if card.locked:
 		return
 	if self._selected_card_index < 0:
 		self._selected_card_index = index
-		card.set_selected(true)
+		card.selected = true
 		return
-	self._cards[self._selected_card_index].set_selected(false)
+	self._cards[self._selected_card_index].selected = false
 	var tmp_index: int = self._selected_card_index
 	self._selected_card_index = -1
 	if tmp_index != index:
@@ -49,13 +48,6 @@ func _swap(index0: int, index1: int):
 	self._cards[index0].set_text(self._cards[index1].get_text())
 	self._cards[index1].set_text(tmp)
 	self.swapped.emit(index0, index1)
-
-
-func _on_card_double_clicked():
-	print("board::_on_card_double_clicked")
-	if self._selected_card_index >= 0 && self._selected_card_index < self._cards.size():
-		self._cards[self._selected_card_index].set_selected(false)
-		self._selected_card_index = -1
 
 
 func play_in():
