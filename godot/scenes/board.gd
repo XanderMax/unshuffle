@@ -1,6 +1,6 @@
 extends Control
 
-var _cards: Array[Card2]
+var _cards: Array[NumberCard]
 var _selected_card_index: int = -1
 
 signal swapped(index0: int, index1: int)
@@ -17,13 +17,13 @@ func _ready():
 	self._cards.push_back($Line1/Card7)
 	
 	for i in range(self._cards.size()):
-		var card: Card2 = self._cards[i]
+		var card: NumberCard = self._cards[i]
 		card.clicked.connect(func(): _on_card_clicked(i, card))
 		card.double_clicked.connect(func(): _on_card_double_clicked())
 		card.set_text(str(i + 1))
 
 
-func _on_card_clicked(index: int, card: Card2):
+func _on_card_clicked(index: int, card: NumberCard):
 	assert(index >= 0 && index < self._cards.size())
 	print("board::_on_card_clicked(", index, ", ", card, ")")
 	if card.is_locked():

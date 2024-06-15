@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bw7m4iw4dulx6"]
 
-[ext_resource type="PackedScene" uid="uid://dhlq5vq34rl7g" path="res://scenes/card2.tscn" id="1_a5573"]
 [ext_resource type="Script" path="res://scenes/board.gd" id="1_d4p25"]
+[ext_resource type="PackedScene" uid="uid://dhlq5vq34rl7g" path="res://scenes/number_card.tscn" id="2_k0mxs"]
 
 [sub_resource type="Animation" id="Animation_pl762"]
 resource_name = "play_in"
@@ -57,16 +57,16 @@ offset_left = -496.0
 offset_right = -496.0
 offset_bottom = 66.984
 
-[node name="Card0" parent="Line0" instance=ExtResource("1_a5573")]
+[node name="Card0" parent="Line0" instance=ExtResource("2_k0mxs")]
 layout_mode = 2
 
-[node name="Card1" parent="Line0" instance=ExtResource("1_a5573")]
+[node name="Card1" parent="Line0" instance=ExtResource("2_k0mxs")]
 layout_mode = 2
 
-[node name="Card2" parent="Line0" instance=ExtResource("1_a5573")]
+[node name="Card2" parent="Line0" instance=ExtResource("2_k0mxs")]
 layout_mode = 2
 
-[node name="Card3" parent="Line0" instance=ExtResource("1_a5573")]
+[node name="Card3" parent="Line0" instance=ExtResource("2_k0mxs")]
 layout_mode = 2
 
 [node name="Line1" type="HBoxContainer" parent="."]
@@ -80,16 +80,16 @@ offset_top = 95.984
 offset_right = 512.002
 offset_bottom = 162.968
 
-[node name="Card4" parent="Line1" instance=ExtResource("1_a5573")]
+[node name="Card4" parent="Line1" instance=ExtResource("2_k0mxs")]
 layout_mode = 2
 
-[node name="Card5" parent="Line1" instance=ExtResource("1_a5573")]
+[node name="Card5" parent="Line1" instance=ExtResource("2_k0mxs")]
 layout_mode = 2
 
-[node name="Card6" parent="Line1" instance=ExtResource("1_a5573")]
+[node name="Card6" parent="Line1" instance=ExtResource("2_k0mxs")]
 layout_mode = 2
 
-[node name="Card7" parent="Line1" instance=ExtResource("1_a5573")]
+[node name="Card7" parent="Line1" instance=ExtResource("2_k0mxs")]
 layout_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

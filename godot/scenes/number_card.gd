@@ -1,4 +1,4 @@
-class_name Card2 extends Control
+class_name NumberCard extends Control
 
 const _circle_unlocked_texture: Resource = preload("res://imgs/03_circle_white.png")
 const _circle_locked_texture: Resource = preload("res://imgs/04_circle_white_gray_bg.png")
