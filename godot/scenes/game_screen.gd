@@ -63,11 +63,17 @@ func get_swaps_count() -> int:
 	return self._swaps_count
 
 
+func _is_playing() -> bool:
+	return $Board.is_playing() || $AnimationPlayer.is_playing()
+
+
 func play_in():
-	if not $Board.is_playing():
+	if not _is_playing():
+		$AnimationPlayer.play("play_in")
 		$Board.play_in()
 
 
 func play_out():
-	if not $Board.is_playing():
+	if not _is_playing():
+		$AnimationPlayer.play_backwards("play_in")
 		$Board.play_out()
