@@ -39,7 +39,7 @@ func _increment_swaps_count():
 
 func _update_matches() -> int:
 	var matches: int = _count_matches()
-	$CenterContainer/MatchCountLabel.text = "%d/8" % matches
+	$Circle/MatchCountLabel.text = "%d/8" % matches
 	return matches
 
 

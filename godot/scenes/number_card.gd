@@ -1,4 +1,9 @@
+@tool
 class_name NumberCard extends Control
+
+
+signal clicked()
+signal double_clicked()
 
 
 const _circle_unlocked_texture: Resource = preload("res://imgs/03_circle_white.png")
@@ -7,10 +12,6 @@ const _circle_locked_texture: Resource = preload("res://imgs/04_circle_white_gra
 
 var _locked:bool = false
 var _selected: bool = false
-
-
-signal clicked()
-signal double_clicked()
 
 
 func _gui_input(event):
