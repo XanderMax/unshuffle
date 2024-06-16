@@ -3,6 +3,7 @@ class_name GameScreen extends Control
 var _secret_sequence: Array[int] = [7, 6, 5, 4, 3, 2, 1, 0]
 var _visible_sequence: Array[int] = [0, 1, 2, 3, 4, 5, 6, 7]
 var _swaps_count: int = 0
+var _matches: int = 0
 
 signal game_won()
 
@@ -39,8 +40,11 @@ func _increment_swaps_count():
 
 func _update_matches() -> int:
 	var matches: int = _count_matches()
-	$Circle/MatchCountLabel.text = "%d/8" % matches
-	return matches
+	if matches != self._matches:
+		_play_beat()
+		self._matches = matches
+	$Circle/MatchCountLabel.text = "%d/8" % self._matches
+	return self._matches
 
 
 func _count_matches() -> int:
@@ -77,3 +81,7 @@ func play_out():
 	if not _is_playing():
 		$AnimationPlayer.play_backwards("play_in")
 		$Board.play_out()
+
+
+func _play_beat():
+	$AnimationPlayer.play("beat")

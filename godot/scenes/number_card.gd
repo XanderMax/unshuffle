@@ -18,7 +18,6 @@ func _gui_input(event):
 		return
 	var mouse_event:InputEventMouseButton = event as InputEventMouseButton
 	if mouse_event.is_pressed() and mouse_event.button_index == MOUSE_BUTTON_LEFT:
-		self.play_beat()
 		self.clicked.emit()
 
 
