@@ -10,15 +10,15 @@ const _circle_unlocked_texture: Resource = preload("res://imgs/03_circle_white.p
 const _circle_locked_texture: Resource = preload("res://imgs/04_circle_white_gray_bg.png")
 
 
-var _locked:bool = false
 var _selected: bool = false
 
 
 func _gui_input(event):
 	if not (event is InputEventMouseButton):
 		return
-	var mouseEvent:InputEventMouseButton = event as InputEventMouseButton
-	if event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
+	var mouse_event:InputEventMouseButton = event as InputEventMouseButton
+	if mouse_event.is_pressed() and mouse_event.button_index == MOUSE_BUTTON_LEFT:
+		self.play_beat()
 		self.clicked.emit()
 
 
@@ -43,3 +43,7 @@ func set_text(text: String):
 
 func get_text() -> String:
 	return $NumberLabel.text
+
+
+func play_beat():
+	$AnimationPlayer.play("beat")
