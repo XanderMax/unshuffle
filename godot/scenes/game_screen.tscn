@@ -11,20 +11,55 @@ font_size = 48
 font_size = 80
 font_color = Color(0.501961, 0.992157, 0.341176, 1)
 
-[sub_resource type="Animation" id="Animation_4npkw"]
-resource_name = "play_in"
-length = 0.5
+[sub_resource type="Animation" id="Animation_d60ke"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Circle:position")
-tracks/0/interp = 2
+tracks/0/path = NodePath("Circle:anchor_left")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(112, -280), Vector2(112, 160)]
+"values": [0.262]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Circle:anchor_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.173]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Circle:anchor_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.748]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Circle:anchor_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.406]
 }
 
 [sub_resource type="Animation" id="Animation_n52ty"]
@@ -79,55 +114,20 @@ tracks/3/keys = {
 "values": [0.406, 0.356, 0.406]
 }
 
-[sub_resource type="Animation" id="Animation_d60ke"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_4npkw"]
+resource_name = "play_in"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Circle:anchor_left")
-tracks/0/interp = 1
+tracks/0/path = NodePath("Circle:position")
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.262]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Circle:anchor_top")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.173]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Circle:anchor_right")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.748]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Circle:anchor_bottom")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.406]
+"values": [Vector2(112, -280), Vector2(112, 160)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oeqo6"]
@@ -192,10 +192,10 @@ anchor_left = 0.262
 anchor_top = 0.173
 anchor_right = 0.748
 anchor_bottom = 0.406
-offset_left = -21.536
-offset_top = -486.498
-offset_right = -21.544
-offset_bottom = -486.256
+offset_left = -0.135994
+offset_top = -440.198
+offset_right = 15.856
+offset_bottom = -431.956
 texture = ExtResource("3_67lo7")
 expand_mode = 1
 stretch_mode = 5
